@@ -9,25 +9,51 @@ function App() {
 
   // movies Array 생성
   const [movies, setMovies] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-      fetch(FEATURED_API)
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          setMovies(data.results);
-        });
+    getMovies(FEATURED_API);
   }, []);
+
+  // 영화정보 API호출
+  const getMovies = (API) => {
+    fetch(API)
+      .then((res) => res.json())
+      .then((data) => {
+        setMovies(data.results);
+    });
+  }
+
+  const handleOnSubmit = (e) => {
+    e.preventDefault();
+    
+    // 검색 API호출
+    if (searchTerm) {
+      getMovies(SEARCH_API + searchTerm);
+      
+      setSearchTerm("");
+    }
+  }
+
+  const handleOnChange = (e) => {
+    setSearchTerm(e.target.value)
+  }
 
   return (
       <>
         <header>
+          {/* 검색창 */}
+          <form onSubmit={handleOnSubmit}>
               <input 
                 className="search"
                 type="text" 
                 placeholder="Search..." 
+                value={searchTerm}
+                onChange={handleOnChange}
               />
+          </form>
         </header>
+        {/* 영화정보 */}
         <div className="movie-container">
             {movies.length > 0 &&
               movies.map((movie) => <Movie key={movie.id} {...movie} />)} 
