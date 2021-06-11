@@ -42,8 +42,12 @@ function App() {
   return (
       <>
         <header>
+          <div className="logo">
+              <h1 className="home">Movie<span>View</span></h1>
+          </div>
           {/* 검색창 */}
           <form onSubmit={handleOnSubmit}>
+            <div className="msearch">
               <input 
                 className="search"
                 type="text" 
@@ -51,6 +55,7 @@ function App() {
                 value={searchTerm}
                 onChange={handleOnChange}
               />
+            </div>
           </form>
         </header>
         {/* 영화정보 */}
