@@ -1,7 +1,6 @@
 # ReactMoviesApp
 
-This is a ReactMoviesApp.
-
+This is a ReactMoviesApp which can see Movies Post, Overview and Vote average 
 
 Built with: 
  
@@ -12,11 +11,11 @@ Built with:
 
 ## Description 
 
-- Movies title and img  
+- Movies Post  
 - Responsive
 - Hover  
-- overview
-- vote_average
+- Overview
+- Vote average
 
 ## Preview 
 ![123123](https://user-images.githubusercontent.com/65179725/121684594-da1e0500-caf9-11eb-901c-33f4cd962350.PNG)
