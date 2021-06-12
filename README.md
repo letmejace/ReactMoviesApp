@@ -7,7 +7,7 @@ This is a ReactMoviesApp which can see Movies Post, Overview and Vote average
 - React
 - Javascript   
 - HTML
-- CSS     
+- CSS      
 
 ## Description 
 
